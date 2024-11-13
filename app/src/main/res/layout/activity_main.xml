@@ -1,0 +1,105 @@
+<!-- res/layout/activity_main.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFF3F3">
+
+    <!-- Display remaining life -->
+    <TextView
+        android:id="@+id/lifeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Life: 3"
+        android:textSize="18sp"
+        android:layout_gravity="start" />
+
+    <!-- Scrollable container for clues and board -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!-- Container for clues and board -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+
+                <!-- Row for Nonogram title and row clues -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:paddingRight="8dp">
+
+                    <!-- Top-left Nonogram label -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nonogram"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:paddingBottom="8dp" />
+
+                    <!-- Row clues on the left side -->
+                    <LinearLayout
+                        android:id="@+id/rowClueContainer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <!-- Column clues and main board -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <!-- Column clues above the board -->
+                    <TableRow
+                        android:id="@+id/columnClueRow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal" />
+
+                    <!-- Main board -->
+                    <TableLayout
+                        android:id="@+id/tableLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:stretchColumns="*" />
+                </LinearLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </ScrollView>
+
+    <!-- Toggle Button for switching between marking black squares and X -->
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="Mark Black Square"
+        android:textOn="Mark X"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:id="@+id/blackSquareButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BLACK SQUARE"
+        android:backgroundTint="#6A1B9A"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>
